@@ -49,7 +49,16 @@ export default function Index({ metadata, featured, collections }) {
         <Hero collection={hero} />
       </HeroWrapper>
       <Container>
-        <Heading as="h2">About Canopy</Heading>
+        <Heading as="h2">About the collection of Solveig Greve</Heading>
+        <div>
+          <p>
+            Solveig Greve (1946-) har siden ca. 1970 virket som fotograf i Bergen. Hun ledet i mange å Billedsamlingen ved Universitetsbiblioteket i Bergen.
+          </p>
+          <p>
+            Denne samlingen inneholder hennes bybilder som ofte viste barn og ungdom i byen.
+          </p>
+        </div>
+        {/* <Heading as="h2">About Canopy</Heading>
         <div>
           <p>
             <strong>Canopy IIIF</strong> is a purely{" "}
@@ -72,7 +81,7 @@ export default function Index({ metadata, featured, collections }) {
               <GitHubLogoIcon />
             </Button>
           </ButtonWrapper>
-        </div>
+        </div> */}
         <Related collections={collections} title="Highlighted Works" />
       </Container>
     </Layout>

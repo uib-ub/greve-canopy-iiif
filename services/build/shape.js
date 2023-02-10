@@ -13,7 +13,7 @@ exports.getCanopyCollection = (json, depth = 0, parent = null) => {
     id: json.id,
     type: "Collection",
     label: json.label,
-    slug: getSlug(getLabel(json.label)[0]),
+    slug: json.id,
     depth: depth,
     parent: parent,
     manifests: children.manifests,

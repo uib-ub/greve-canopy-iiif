@@ -1,5 +1,5 @@
 {
-  "name": "canopy-iiif",
+  "name": "greve-canopy-iiif",
   "private": true,
   "scripts": {
     "dev": "next -p 5001",

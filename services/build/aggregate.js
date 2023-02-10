@@ -59,17 +59,17 @@ module.exports.build = (env) => {
         const thumbnail = manifest.thumbnail
           ? manifest.thumbnail
           : manifest.items[0].thumbnail
-          ? manifest.items[0].thumbnail
-          : getRepresentativeImage(manifest, 400)
-          ? getRepresentativeImage(manifest, 400)
-          : [];
+            ? manifest.items[0].thumbnail
+            : getRepresentativeImage(manifest, 400)
+              ? getRepresentativeImage(manifest, 400)
+              : [];
         return {
           ...canopyManifests.find(
             (canopyManifest) => canopyManifest.id === manifest.id
           ),
-          slug: getSlug(getLabel(manifest.label)[0]),
+          slug: manifest.id.split('/')[4],
           thumbnail: thumbnail,
-          ...manifest.navPlace && {navPlace: manifest.navPlace}
+          ...manifest.navPlace && { navPlace: manifest.navPlace }
         };
       });
       fs.writeFile(

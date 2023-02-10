@@ -23,12 +23,15 @@ const getService = async (service, preferredWidth = 1000) => {
 };
 
 exports.getRepresentativeImage = async (resource, preferredSize = 1000) => {
-  const firstCanvas = resource.items[0].items[0].items[0];
-  const firstCanvasService = await getService(
+  //console.log("🚀 ~ file: image.js:26 ~ exports.getRepresentativeImage= ~ resource", resource)
+  const firstCanvas = resource.items[0];
+  //console.log("🚀 ~ file: image.js:28 ~ exports.getRepresentativeImage= ~ firstCanvas", firstCanvas)
+
+  const firstCanvasService = firstCanvas.items?.[0].items?.[0].body?.service?.[0] ? await getService(
     firstCanvas.body.service[0],
     preferredSize
-  );
-  if (firstCanvasService !== {}) {
+  ) : null;
+  if (firstCanvasService) {
     return [
       {
         id: firstCanvasService.id,
