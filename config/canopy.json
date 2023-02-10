@@ -1,0 +1,35 @@
+{
+  "map": {
+    "enabled": false
+  },
+  "prod": {
+    "label": {
+      "none": [
+        "Solveig Greve"
+      ]
+    },
+    "collection": "https://api-ub.vercel.app/collections/ubb-sg-",
+    "featured": [
+      "https://api-ub.vercel.app/items/ubb-sg-001-022a/manifest",
+      "https://api-ub.vercel.app/items/ubb-sg-001-035a/manifest"
+    ],
+    "metadata": [
+      "Subjects"
+    ]
+  },
+  "dev": {
+    "label": {
+      "none": [
+        "Solveig Greve"
+      ]
+    },
+    "collection": "https://api-ub.vercel.app/collections/ubb-sg-",
+    "featured": [
+      "https://api-ub.vercel.app/items/ubb-sg-001-022a/manifest",
+      "https://api-ub.vercel.app/items/ubb-sg-001-035a/manifest"
+    ],
+    "metadata": [
+      "Subjects"
+    ]
+  }
+}
