@@ -1,0 +1,32 @@
+{
+  "prod": {
+    "label": {
+      "none": [
+        "Solveig Greve"
+      ]
+    },
+    "collection": "https://api-ub.vercel.app/collections/ubb-sg",
+    "featured": [
+      "https://api-ub.vercel.app/items/ubb-sg-001-022a/manifest",
+      "https://api-ub.vercel.app/items/ubb-sg-001-035a/manifest"
+    ],
+    "metadata": [
+      "Subjects"
+    ]
+  },
+  "dev": {
+    "label": {
+      "none": [
+        "Solveig Greve"
+      ]
+    },
+    "collection": "http://localhost:3009/collections/ubb-sg",
+    "featured": [
+      "http://localhost:3009/items/ubb-sg-001-022a/manifest",
+      "http://localhost:3009/items/ubb-sg-001-035a/manifest"
+    ],
+    "metadata": [
+      "Subjects"
+    ]
+  }
+}
