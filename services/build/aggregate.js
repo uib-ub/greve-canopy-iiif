@@ -55,26 +55,27 @@ module.exports.build = (env) => {
 
     responses.then((manifests) => {
       let rootSlugs = {};
-      const allManifests = manifests.map((manifest, index) => {
+      const allManifests = manifests.map((manifest/* , index */) => {
         // Break this into a function / service
         const thumbnail = manifest.thumbnail
           ? manifest.thumbnail
           : manifest.items[0].thumbnail
-          ? manifest.items[0].thumbnail
-          : getRepresentativeImage(manifest, 400)
-          ? getRepresentativeImage(manifest, 400)
-          : [];
+            ? manifest.items[0].thumbnail
+            : getRepresentativeImage(manifest, 400)
+              ? getRepresentativeImage(manifest, 400)
+              : [];
 
         const string = getLabel(manifest.label)[0];
 
-        const { slug, allSlugs } = getUniqueSlug(string, rootSlugs);
+        const { /* slug,  */allSlugs } = getUniqueSlug(string, rootSlugs);
         rootSlugs = allSlugs;
 
         return {
           ...canopyManifests.find(
             (canopyManifest) => canopyManifest.id === manifest.id
           ),
-          slug: slug,
+          //slug: slug,
+          slug: manifest.id.split('/')[4],
           thumbnail: thumbnail,
           ...(manifest.navPlace && { navPlace: manifest.navPlace }),
         };

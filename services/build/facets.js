@@ -8,6 +8,8 @@ const getFacetValues = (label, unique, counts, metadata) => {
     .filter((entry) => entry.label === label)
     .map((entry) => {
       const { value } = entry;
+      console.log("🚀 ~ file: facets.js:11 ~ .map ~ value:", value)
+
       const { slug, allSlugs } = getUniqueSlug(value, rootSlugs);
       rootSlugs = allSlugs;
 

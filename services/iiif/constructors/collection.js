@@ -19,7 +19,7 @@ async function createCollection(iiifResources, label = "") {
 }
 
 async function createItem(resource) {
-  const { slug } = MANIFESTS.find((item) => item.id === resource.id);
+  const { id: slug } = MANIFESTS.find((item) => item.id === resource.id);
   const thumbnail = await getRepresentativeImage(resource, 2000);
   return {
     id: resource.id,
@@ -32,10 +32,10 @@ async function createItem(resource) {
 function getCollectionItems(iiifResources) {
   return iiifResources
     ? Promise.all(
-        iiifResources.map((id) =>
-          axios.get(id).then((json) => getPresentation3(json.data))
-        )
+      iiifResources.map((id) =>
+        axios.get(id).then((json) => getPresentation3(json.data))
       )
+    )
     : [];
 }
 

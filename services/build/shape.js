@@ -1,6 +1,6 @@
 const { getPresentation3 } = require("../iiif/context");
-const { getLabel } = require("../iiif/label");
-const { getSlug } = require("./slug");
+// const { getLabel } = require("../iiif/label");
+// const { getSlug } = require("./slug");
 
 exports.getCanopyCollection = (json, depth = 0, parent = null) => {
   if (!json) return null;
@@ -13,7 +13,8 @@ exports.getCanopyCollection = (json, depth = 0, parent = null) => {
     id: json.id,
     type: "Collection",
     label: resource.label,
-    slug: getSlug(getLabel(resource.label)[0]),
+    // slug: getSlug(getLabel(resource.label)[0]),
+    slug: json.id,
     depth: depth,
     parent: parent,
     manifests: children.manifests,
@@ -22,7 +23,7 @@ exports.getCanopyCollection = (json, depth = 0, parent = null) => {
   };
 };
 
-const getCollectionItems = (json, parent) => {
+const getCollectionItems = (json/* , parent */) => {
   let manifests = 0;
   let collections = 0;
 
